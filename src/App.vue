@@ -1,32 +1,32 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="container">
+    <div class="row mt-5">
+      <div class="col-sm"></div>
+      <div v-if="!user" class="col-sm">
+        <router-link to="/login">Login</router-link> |
+        <router-link to="/register">Register</router-link>
+      </div>
+      <div class="col-sm"></div>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
+  created() {
+    var self = this;
+    firebase.auth().onAuthStateChanged(function (user) {
+      self.user = user;
+    });
+  },
+};
+</script>
