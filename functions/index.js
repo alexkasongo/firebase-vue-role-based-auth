@@ -30,6 +30,25 @@ exports.AddUserRole = functions.auth.user().onCreate(async (authUser) => {
     }
 });
 
+// create admin user on signup
+exports.setAdmin = functions.https.onCall(async (data, context) => {
+
+    // if (!context.auth.token.admin) return
+    if (!context.auth.token) return
+
+    try {
+        var _ = await admin.auth().setCustomUserClaims(data.uid, data.role)
+
+        return db.collection("roles").doc(data.uid).update({
+            role: data.role
+        })
+
+    } catch (error) {
+        console.log('🤡', error)
+    }
+
+});
+
 // this function can only be triggered by the admin. This function allows the admin to 
 // set user roles accordingly.
 exports.setUserRole = functions.https.onCall(async (data, context) => {

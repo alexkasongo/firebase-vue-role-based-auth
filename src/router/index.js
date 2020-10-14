@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '@/views/Login'
-import Register from '@/views/Register'
+import RegisterCustomer from '@/views/RegisterCustomer'
+import RegisterAdmin from '@/views/RegisterAdmin'
 import Admin from '@/views/Admin'
 import Subscriber from '@/views/Subscriber'
 import Customer from '@/views/Customer'
@@ -12,9 +13,15 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/register',
-    name: 'register',
-    component: Register,
+    path: '/register-customer',
+    name: 'register-customer',
+    component: RegisterCustomer,
+    meta: {
+      guest: true
+    },
+    path: '/register-admin',
+    name: 'register-admin',
+    component: RegisterAdmin,
     meta: {
       guest: true
     }
