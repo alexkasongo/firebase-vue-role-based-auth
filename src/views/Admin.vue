@@ -17,8 +17,8 @@
               <td data-label="Name">{{ user.email }}</td>
               <td>
                 <select @change="changeRole(user.id, $event)">
-                  <option :selected="user.role.driver" value="driver">
-                    Driver
+                  <option :selected="user.role.subscriber" value="subscriber">
+                    Subscriber
                   </option>
                   <option :selected="user.role.customer" value="customer">
                     Customer

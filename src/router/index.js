@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '@/views/Login'
 import Register from '@/views/Register'
 import Admin from '@/views/Admin'
-import Driver from '@/views/Driver'
+import Subscriber from '@/views/Subscriber'
 import Customer from '@/views/Customer'
 import * as firebase from "firebase/app";
 import "firebase/auth";
@@ -36,9 +36,9 @@ const routes = [
     }
   },
   {
-    path: '/driver',
-    name: 'driver',
-    component: Driver,
+    path: '/subscriber',
+    name: 'subscriber',
+    component: Subscriber,
     meta: {
       auth: true
     }
@@ -77,10 +77,10 @@ router.beforeEach((to, from, next) => {
               return next({
                 path: '/admin',
               })
-          } else if (claims.driver) {
-            if (to.path !== '/driver')
+          } else if (claims.subscriber) {
+            if (to.path !== '/subscriber')
               return next({
-                path: '/driver',
+                path: '/subscriber',
               })
           }
 
