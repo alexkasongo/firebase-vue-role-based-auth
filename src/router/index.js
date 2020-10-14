@@ -14,11 +14,13 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/register-customer',
-    name: 'register-customer',
+    name: 'regiester-customer',
     component: RegisterCustomer,
     meta: {
       guest: true
     },
+  },
+  {
     path: '/register-admin',
     name: 'register-admin',
     component: RegisterAdmin,

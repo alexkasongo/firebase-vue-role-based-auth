@@ -10,9 +10,6 @@
             placeholder="Enter email"
             v-model="email"
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
@@ -23,7 +20,7 @@
             v-model="password"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">Register Customer</button>
       </form>
     </div>
   </div>
@@ -34,7 +31,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 
 export default {
-  name: "Register",
+  name: "RegisterCustomer",
   data: () => ({
     email: "",
     password: "",
@@ -59,6 +56,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

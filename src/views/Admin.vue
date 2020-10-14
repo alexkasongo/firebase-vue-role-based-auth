@@ -38,6 +38,7 @@ import "firebase/auth";
 import "firebase/functions";
 
 export default {
+  name: "Admin",
   data() {
     return {
       users: [],

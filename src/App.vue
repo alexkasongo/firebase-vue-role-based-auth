@@ -4,7 +4,8 @@
       <div class="col-sm"></div>
       <div v-if="!user" class="col-sm">
         <router-link to="/login">Login</router-link> |
-        <router-link to="/register">Register</router-link>
+        <router-link to="/register-customer">Customer</router-link> |
+        <router-link to="/register-admin">Admin</router-link>
       </div>
       <div class="col-sm"></div>
     </div>

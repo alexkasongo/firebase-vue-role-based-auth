@@ -2,7 +2,7 @@
   <section>
     <div class="ui middle aligned center aligned grid">
       <div class="column">
-        <h1>Driver</h1>
+        <h1>Subscriber</h1>
         <p v-if="user">Driver: {{ user.email }}</p>
         <button class="btn btn-primary" @click="signout">Signout</button>
       </div>
